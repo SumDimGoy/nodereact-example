@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   cookieSession({
-    maxAge: 24 * 60 * 60 * 1000, //cookie lasts for one day (ms)
+    maxAge: 24 * 60 * 60 * 1000, //cookie expires after one day (ms)
     keys: [keys.cookieKey] //array allows multiple keys, chooses one at random
   })
 );
