@@ -2,7 +2,6 @@
 This is a basic example of a Fullstack web application with Node, React, Redux,
 and MongoDB based on a Udemy tutorial.
 
-<document whatever steps are necessary to get your application up and running.>
 #### Requirements ####
 * NPM (Node Package Manager)
 * MongoDB
