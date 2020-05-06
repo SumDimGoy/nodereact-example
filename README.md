@@ -33,7 +33,7 @@ For local Deployment, whitelist your own IP address. For Heroku/production deplo
 
 #### Local Deployment ####
 * Create config/dev.js:
-  ```json
+  ```javascript
   module.exports = {
     googleClientID: '<Google OAuth Client ID>',
     googleClientSecret: '<Google OAuth Client Secret>',
