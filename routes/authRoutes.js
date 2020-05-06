@@ -9,12 +9,13 @@ module.exports = app => {
   app.get(
     '/auth/google/callback',
     passport.authenticate('google'));
-    
+
   app.get(
     '/api/currentuser',
     (req, res) => {
       res.send({
         user: req.user,
+        //remove this later
         session: req.session
       });
   });

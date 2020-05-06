@@ -9,14 +9,15 @@ const User = mongoose.model('users');
 passport.serializeUser((user, done) => {
   /*
   Serialize the User object.
-  done is a context from passport library, call it to transition to next auth
-  phase.
 
-  done(errhdlr, unique_id)
-  errhdlr is the placeholder for the error arg, set null to bypass. unique_id
-  needs to be a unique value to each user. Set to the auto-generated value
-  of the '_id' property in the users Mongo.
-  collection.
+  passport.serializeUser() returns a function object for associating a user object
+  to a unique string value. done() is a context from passport library, call it
+  to transition to next auth phase.
+
+  done(errhdlr, id)
+  errhdlr is the placeholder for the on error arg, set null to bypass. id
+  needs to be a unique value to each user. Assigned to the auto-generated value
+  of the '_id' property in the users Mongo collection.
   */
 
   //pass the user id (auto generated in mongodb)
@@ -41,11 +42,13 @@ passport.use(
     callbackURL: '/auth/google/callback'
   },
   (accessToken, refreshToken, profile, done) => {
+  //test
   //console.log('Access Token: ', accessToken);
   //console.log('Refresh Token: ', refreshToken);
   //console.log('profile: ', profile);
   //console.log('Done: ', done);
 
+    //query the user's google ID, filter by profile id
     User.findOne({ googleID: profile.id })
       .then(
         existingUser => {
