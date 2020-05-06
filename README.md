@@ -3,10 +3,10 @@ This is a basic example of a Fullstack web application with Node, React, Redux,
 and MongoDB based on a Udemy tutorial.
 
 #### Requirements ####
-* NPM (Node Package Manager)
-* MongoDB
+* [Node and NPM (Node Package Manager)](https://nodejs.org/)
+* [MongoDB](https://www.mongodb.com/)
 * [Google OAuth 2.0 Keys](https://support.google.com/cloud/answer/6158849?hl=en)
-* A hash for a cookie key
+* [A random hash or string for a cookie key](https://www.openssl.org/docs/man1.0.2/man1/rand.html)
 
 #### What is this repository for? ####
 
@@ -23,8 +23,21 @@ and MongoDB based on a Udemy tutorial.
 `npm install`
 
 * [Add Authorized JavaScript Origins and Redirect URIs for Google OAuth](https://developers.google.com/identity/sign-in/web/server-side-flow) \
-Javascript Origin: `<http|https>://<ipaddress:port or deployment url>` \
-Redirect URI: `<http|https>://<ipaddress:port or deployment url>/auth/google/callback`
+
+  * Development:
+    * Javascript Origin:
+      `<http>://<ipaddress:5000>`
+
+    * Redirect URIs:
+      `<http|https>://<ipaddress>:3000/auth/google/callback`
+      `<http|https>://<ipaddress>:5000/auth/google/callback`
+
+  * Production:
+    * Javascript Origin:
+      `<http|https>://<deployment URL>`
+
+    * Redirect URIs:
+      `<http|https>://<deployment URL>/auth/google/callback`
 
 * [Create MongoDB Cluster and Database](https://docs.atlas.mongodb.com/getting-started/) \
 For local Deployment, whitelist your own IP address. For Heroku/production deployment use `0.0.0.0/0`

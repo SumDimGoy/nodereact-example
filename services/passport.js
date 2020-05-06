@@ -54,10 +54,11 @@ passport.use(
       .then(
         existingUser => {
           if (existingUser) {
-            //if record already exists
+            //if record already exists, give data to passport
             done(null, existingUser);
           }
           else {
+            //else create new user, commit to db, give data to passport
             new User({
               googleID: profile.id,
               name: profile.displayName
