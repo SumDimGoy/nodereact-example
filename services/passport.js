@@ -15,10 +15,10 @@ passport.serializeUser(
     to a unique string value. done() is a context from passport library, call it
     to transition to next auth phase.
 
-    done(errhdlr, id)
-    errhdlr is the placeholder for the on error arg, set null to bypass. id
-    needs to be a unique value to each user. Assigned to the auto-generated value
-    of the '_id' property in the users Mongo collection.
+    done(onerr, id)
+    onerr: function to perform on error
+    id: needs to be a unique value to each user. Assigned to the auto-generated
+    value of the '_id' property in the users Mongo collection.
     */
 
     //pass the user id (auto generated in mongodb)
@@ -40,11 +40,6 @@ passport.use(
     callbackURL: '/auth/google/callback'
   },
   async(accessToken, refreshToken, profile, done) => {
-      //test
-      //console.log('Access Token: ', accessToken);
-      //console.log('Refresh Token: ', refreshToken);
-      //console.log('profile: ', profile);
-      //console.log('Done: ', done);
 
       //query the user's google account ID (profile id)
       let existingUser = await User.findOne({ googleID: profile.id});
@@ -57,7 +52,8 @@ passport.use(
       //else create new user
       let newUser = new User({
         googleID: profile.id,
-        name: profile.displayName
+        name: profile.displayName,
+        email: profile.email
       });
 
       //commit to db

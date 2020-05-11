@@ -15,7 +15,7 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 /*
   Takes two arguments.
   First for the JSX to be rendered
-  Second is the location in the DOM where to render the JSX
+  Second is the location in the DOM to render the JSX
 */
 
 /*
@@ -41,3 +41,5 @@ ReactDOM.render(
   </Provider>,
   document.querySelector('#root')
 );
+
+console.log('React Stripe Key: '+ process.env.REACT_APP_STRIPE_KEY)

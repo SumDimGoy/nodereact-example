@@ -5,10 +5,11 @@ import * as actions from '../actions';
 
 import Header from './Header.js'
 
+import Landing from './Landing';
+
 //const Header = () => <h2>Header</h2>;
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
-const Landing = () => <h2>Landing</h2>;
 
 /*
   React Router notes
@@ -36,16 +37,15 @@ class App extends Component {
       //<div></div><div></div> would throw an error
       <div className="container">
         <BrowserRouter>
-          {/* BrowserRouter only expect one component
+          {/* BrowserRouter only expects one component
             <div></div><div></div> would throw an error */}
           <div>
-            {/* since we want the header to be visible at all times, we do not
-              need to create a route for it, only add it to the BrowserRouter
-              child component */}
             <Header />
 
             {/* display the landing component */}
             <Route exact path="/" component={Landing} />
+
+            {/*Dashboard after logging in*/}
             <Route exact path="/surveys" component={Dashboard} />
 
             {/* unique routes without matching substrings do not need the exact
