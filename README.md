@@ -1,28 +1,3 @@
-
-## Example Node/React Full-stack Web Application ##
-This is a basic example of a Fullstack web application with Node, React, Redux,
-and MongoDB based on a Udemy course.
-
-[Heroku Example Deployment](https://enigmatic-river-32450.herokuapp.com/)
-
-#### Requirements ####
-* [Node and NPM (Node Package Manager)](https://nodejs.org/)
-* [MongoDB](https://www.mongodb.com/)
-* [Google OAuth 2.0 Keys](https://support.google.com/cloud/answer/6158849?hl=en)
-* [A random hash or string for a cookie key](https://www.openssl.org/docs/man1.0.2/man1/rand.html)
-* [A Stripe API Key](https://stripe.com/)
-
-#### What is this repository for? ####
-
-* A full-stack web application that allows a user to sign up, purchase credits, and then customize an email campaign for a list of email addresses.
-
-* Version 0.1
-
-#### How do I get set up? ####
-
-* Clone the repo \
-`git clone https://github.com/SumDimGoy/nodereact-example.git`
-
 ## Example Node/React Full-stack Web Application ##
 This is a basic example of a Fullstack web application with Node, React, Redux,
 and MongoDB based on a Udemy course.
@@ -105,7 +80,7 @@ For local Deployment, whitelist your own IP address. For Heroku/production deplo
 * It is recommended to have separate databases for each deployment. Verify that your application is running by navigating to the application's URL in the browser. To test your payment API functionality, you may use the following dummy information:
 
 	* The verification portion is not necessary and can be closed) <br>
-	Email: anyaddress@abc123.com
-	Card Number: 4242 4242 4242 4242
-	Exp: 12/20
-	CVV: 123
+	<ul>Email: anyaddress@abc123.com</ul>
+	<ul>Card Number: 4242 4242 4242 4242<br></ul>
+	<ul>Exp: 12/20</ul>
+	<ul>CVV: 123</ul>
