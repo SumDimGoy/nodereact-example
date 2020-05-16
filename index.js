@@ -7,6 +7,7 @@ const keys = require('./config/keys');
 
 //import the mongoose models before connecting
 require('./models/User');
+require('./models/Survey');
 
 //import our passport functions and strategies
 require('./services/passport');
@@ -37,6 +38,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   //express will serve production assets

@@ -8,6 +8,10 @@ import App from './components/App';
 import reducers from './reducers';
 import reduxThunk from 'redux-thunk';
 
+//test
+import axios from 'axios';
+window.axios = axios;
+
 //give the reducers to the redux store with reduxThunk middleware
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
@@ -41,5 +45,3 @@ ReactDOM.render(
   </Provider>,
   document.querySelector('#root')
 );
-
-console.log('React Stripe Key: '+ process.env.REACT_APP_STRIPE_KEY)

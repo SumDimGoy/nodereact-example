@@ -6,8 +6,8 @@ import Payments from './Payments'
 //subclass React.Component
 class Header extends Component {
   renderContent() {
-    console.log('this.props.auth data')
-    console.log (this.props.auth);
+    //console.log('this.props.auth data')
+    //console.log (this.props.auth);
     switch (this.props.auth) {
       case null:
         return;

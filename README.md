@@ -84,3 +84,7 @@ For local Deployment, whitelist your own IP address. For Heroku/production deplo
 	<ul>Card Number: 4242 4242 4242 4242<br></ul>
 	<ul>Exp: 12/20</ul>
 	<ul>CVV: 123</ul>
+
+![Development Auth Flow](images/Auth_Flow_React_Express_Dev.png)
+<br><br>
+![Production Auth Flow](images/Auth_Flow_React_Express_Prod.png)
