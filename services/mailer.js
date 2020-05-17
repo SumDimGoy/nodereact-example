@@ -28,6 +28,7 @@ class Mailer extends helper.Mail {
     }
 
     //per sendgrid documentation
+    //init tracking and tracking settings objects
     addClickTracking () {
       const trackingSettings = new helper.TrackingSettings();
       const clickTracking = new helper.ClickTracking(true, true);
@@ -35,7 +36,7 @@ class Mailer extends helper.Mail {
       trackingSettings.setClickTracking(clickTracking);
       this.addTrackingSettings(trackingSettings);
     }
-
+    
     addRecipients (recipients) {
       const personalize = new helper.Personalization();
       this.recipients.forEach(recipient => {

@@ -45,7 +45,7 @@ function mapStateToProps(state) {
   //take redux state and transform to props to send to the component
 
   //when defining mapStateToProps,
-  //the return object will show up as props to the component we connect to
+  //the return object will show up as props to the connected component
   return { formValues: state.form.surveyForm.values };
 }
 

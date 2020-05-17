@@ -5,6 +5,6 @@ module.exports = (req, res, next) => {
     });
   }
 
-  //continue if user is logged in
+  //continue if logged in
   next();
 };

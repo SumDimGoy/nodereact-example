@@ -8,8 +8,9 @@ and MongoDB based on a Udemy course.
 * [Node and NPM (Node Package Manager)](https://nodejs.org/)
 * [MongoDB](https://www.mongodb.com/)
 * [Google OAuth 2.0 Keys](https://support.google.com/cloud/answer/6158849?hl=en)
-* [A random hash or string for a cookie key](https://www.openssl.org/docs/man1.0.2/man1/rand.html)
-* [A Stripe API Key](https://stripe.com/)
+* [Random hash or string for a cookie key](https://www.openssl.org/docs/man1.0.2/man1/rand.html)
+* [Stripe API Key](https://stripe.com/)
+* [Sendgrid API Key](https://stripe.com/)
 
 #### What is this repository for? ####
 
@@ -55,12 +56,17 @@ For local Deployment, whitelist your own IP address. For Heroku/production deplo
     mongoURI: '<MongoDB Connection String>',
     cookieKey: '<Hash/Cookie Key>',
     stripePublishableKey: '<Stripe Publishable API Key>',
-    stripeSecretKey: '<Stripe Secret API Key>'
+    stripeSecretKey: '<Stripe Secret API Key>',
+    sendgridKey: '<Sendgrid API Key>',
+    redirectDomain: '<deployment url or localhost:3000>'
   }
   ```
 
+* Log into your Sendgrid account, and navigate to Settings > Mail Settings > Event Webhook
+  *  In a terminal window, run `npx ngrok localhost:3000`
+  * Copy the forwarding url `<http|https>://<randomstring>.ngrok.io` into the HTTP Post URL field. Make sure that 'clicked' events are checked to be posted. Save.
 
-* To start the server: \
+* To start the server: <br />
 `npm run dev`
 
 #### Heroku Deployment #####
@@ -72,14 +78,20 @@ For local Deployment, whitelist your own IP address. For Heroku/production deplo
   COOKIE_KEY = <Hash/Cookie Key>
   STRIPE_PUBLISHABLE_KEY = <Stripe Publishable API Key>
   STRIPE_SECRET_KEY = <Stripe Secret API Key>
+  SENDGRID_KEY = <Sendgrid API Key>
+  REDIRECT_DOMAIN = <deployment url or localhost:3000>
   ```
 
 
  * [Deploying NodeJS on Heroku](https://devcenter.heroku.com/articles/deploying-nodejs)
 
-* It is recommended to have separate databases for each deployment. Verify that your application is running by navigating to the application's URL in the browser. To test your payment API functionality, you may use the following dummy information:
+ * Log into your Sendgrid account, and navigate to Settings > Mail Settings > Event Webhook
+   * Copy the deployment url into the HTTP Post URL field. Make sure that 'clicked' events are checked to be posted. Save.
 
-	* The verification portion is not necessary and can be closed) <br>
+* It is recommended to have separate databases for each deployment. Verify that your application is running by navigating to the application's URL in the browser.
+
+* To test payment API functionality, use the following dummy information:<br />
+  <ul>(The verification portion is not necessary and can be closed) <br /></ul>
 	<ul>Email: anyaddress@abc123.com</ul>
 	<ul>Card Number: 4242 4242 4242 4242<br></ul>
 	<ul>Exp: 12/20</ul>

@@ -17,6 +17,7 @@ module.exports = app => {
     }
   )
 
+  //show the user surveys
   app.get('/api/surveys',
     requireLogin,
     async(req, res) => {
@@ -61,15 +62,18 @@ module.exports = app => {
     }
   );
 
+  //for sendgrid webhooks
   app.post(
     '/api/surveys/webhooks',
     (req, res) => {
-      console.log(req.body);
+
+      //path parser with matching route params
       const p = new Path('/api/surveys/:surveyId/:choice');
 
+      //chain the events array in req.body
       const events = _.chain(req.body)
 
-        //destructure assign the email and url from req.body
+        //destructure assign the email and url 
         .map( ({ email, url }) => {
 
           //parse the webhook event url path for matches
@@ -119,13 +123,7 @@ module.exports = app => {
         //return
         .value();
 
-      //for every recipient record in a given survey
-      //query and filter out all recipient records except those matching the
-      //email and responded as false and update the record
-
-
-    console.log('EVENTS!')
-    console.log(events);
+    //empty acknowledgment response
     res.send({});
   });
 };

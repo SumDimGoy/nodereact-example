@@ -1,6 +1,6 @@
 import { FETCH_SURVEYS } from '../actions/types';
 
-//initial state of survey list (state) is empty
+//initial state of survey array (state) is empty
 export default function (state = [], action) {
   switch(action.type) {
     case FETCH_SURVEYS:

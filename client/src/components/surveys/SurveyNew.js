@@ -8,7 +8,6 @@ class SurveyNew extends Component {
   //replaces props.state
   state = { showFormReview: false };
 
-  //helper function for form review canceling
   renderContent() {
     if (this.state.showFormReview) {
       return <SurveyFormReview

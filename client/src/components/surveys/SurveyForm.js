@@ -12,7 +12,7 @@ class SurveyForm extends Component {
       redux-form Field passes on the label property to the surveyField component
     */
     return _.map(formFields, ({ label, name }) =>  {
-      //iterate over our list of fields (destructuring) and create a Field Component
+      //iterate over formFields array (destructuring) and create a Field Component
       return (
         <Field
           label={label}
@@ -53,7 +53,7 @@ function validate(values) {
   /*
     in the validate function for redux, it will match up to any values
     assigned in the error object that also exist as a prop in the SurveyForm
-    and render that error messagem in the component
+    component and render the error message
   */
   const errors = {};
 

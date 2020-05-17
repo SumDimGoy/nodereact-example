@@ -11,12 +11,12 @@ passport.serializeUser(
     /*
     Serialize the User object.
 
-    passport.serializeUser() returns a function object for associating a user object
-    to a unique string value. done() is a context from passport library, call it
-    to transition to next auth phase.
+    passport.serializeUser() returns a function object for associating a user
+    object to a unique string value. done() is a context from passport library,
+    call it to transition to next auth phase.
 
-    done(onerr, id)
-    onerr: function to perform on error
+    done(error, id)
+    error: function to perform on error
     id: needs to be a unique value to each user. Assigned to the auto-generated
     value of the '_id' property in the users Mongo collection.
     */
