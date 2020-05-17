@@ -25,6 +25,9 @@ import SurveyNew from './surveys/SurveyNew';
 */
 
 class App extends Component {
+  //this is invoked immediately after a component is mounted or inserted into
+  //the browser. inside this function is where interactions with outside
+  //data and remote endpoints go.
   componentDidMount() {
     this.props.fetchUser();
   }
@@ -32,7 +35,6 @@ class App extends Component {
   render() {
     return (
       //React will only allow one parent component
-      //<div></div><div></div> would throw an error
       <div className="container">
         <BrowserRouter>
           {/* BrowserRouter only expects one component

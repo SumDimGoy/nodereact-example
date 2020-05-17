@@ -44,7 +44,8 @@ and MongoDB based on a Udemy course.
       `<http|https>://<deployment URL>/auth/google/callback`
 
 * [Create MongoDB Cluster and Database](https://docs.atlas.mongodb.com/getting-started/) \
-For local Deployment, whitelist your own IP address. For Heroku/production deployment use `0.0.0.0/0`
+For local Deployment, whitelist your own IP address. For Heroku/production
+deployment use `0.0.0.0/0`
 <br>
 
 #### Local Deployment ####
@@ -61,6 +62,9 @@ For local Deployment, whitelist your own IP address. For Heroku/production deplo
     redirectDomain: '<deployment url or localhost:3000>'
   }
   ```
+* In order to access environment variables in the react environment, it is
+  necessary to inject them. Find the files `/server/client/src/.env.development`
+  and paste your public Stripe API key.
 
 * Log into your Sendgrid account, and navigate to Settings > Mail Settings > Event Webhook
   *  In a terminal window, run `npx ngrok localhost:3000`
@@ -82,20 +86,27 @@ For local Deployment, whitelist your own IP address. For Heroku/production deplo
   REDIRECT_DOMAIN = <deployment url or localhost:3000>
   ```
 
+* In order to access environment variables in the react environment, it is
+  necessary to inject them. Find the files `/server/client/src/.env.production`
+  and paste your public Stripe API key.
+
+* Log into your Sendgrid account, and navigate to Settings > Mail Settings > Event Webhook
+
+* Copy the deployment url into the HTTP Post URL field. Make sure that 'clicked' events are checked to be posted. Save.
+
 
  * [Deploying NodeJS on Heroku](https://devcenter.heroku.com/articles/deploying-nodejs)
+<br /><br />
+<hr />
 
- * Log into your Sendgrid account, and navigate to Settings > Mail Settings > Event Webhook
-   * Copy the deployment url into the HTTP Post URL field. Make sure that 'clicked' events are checked to be posted. Save.
+It is recommended to have separate databases for each deployment. Verify that your application is running by navigating to the application's URL in the browser.
 
-* It is recommended to have separate databases for each deployment. Verify that your application is running by navigating to the application's URL in the browser.
-
-* To test payment API functionality, use the following dummy information:<br />
-  <ul>(The verification portion is not necessary and can be closed) <br /></ul>
-	<ul>Email: anyaddress@abc123.com</ul>
-	<ul>Card Number: 4242 4242 4242 4242<br></ul>
-	<ul>Exp: 12/20</ul>
-	<ul>CVV: 123</ul>
+To test Stripe API functionality, use the following dummy information:<br />
+(The verification portion is not necessary and can be closed) <br /><br />
+Email: anyaddress@abc123.com<br />
+Card Number: 4242 4242 4242 4242<br />
+Exp: 12/20<br />
+CVV: 123<br />
 
 ![Development Auth Flow](images/Auth_Flow_React_Express_Dev.png)
 <br><br>
