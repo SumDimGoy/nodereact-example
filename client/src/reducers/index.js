@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux';
 import { reducer as reduxForm } from 'redux-form'
 import authReducer from './authReducer.js';
+import surveysReducer from './surveysReducer';
 
 /*
   The object being passed to combineReducers should contain all of the details
   regarding our state, and are passed onto the state object.
 */
 export default combineReducers({
-  //asssociates the 'auth' state to the authReducer
+  //asssociate the redux reducers to their corresponding state keys
   auth: authReducer,
-  form: reduxForm
+  form: reduxForm,
+  surveys: surveysReducer
 });
