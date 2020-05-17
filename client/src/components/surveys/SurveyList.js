@@ -12,10 +12,10 @@ class SurveyList extends Component {
   renderSurveys() {
     return this.props.surveys.reverse().map(survey => {
       return (
-        <div className="card blue-grey lighten-4" key={survey._id}>
+        <div className="card blue-grey lighten-5" key={survey._id}>
           <div className="card-content">
             <span
-              className="card-title purple lighten-5"
+              className="card-title teal lighten-5"
               style={{
                 marginTop: "-20px",
                 marginBottom: '10px',
@@ -24,7 +24,7 @@ class SurveyList extends Component {
                 fontSize: "20px",
                 shadow: "1px",
                 border: "2px solid",
-                borderColor: "lightsteelblue",
+                borderColor: "gainsboro",
                 borderRadius: "3px",
                 fontFamily: "georgia, sans-serif"}}
             >
