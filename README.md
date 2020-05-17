@@ -96,7 +96,7 @@ deployment use `0.0.0.0/0`
 
 
  * [Deploying NodeJS on Heroku](https://devcenter.heroku.com/articles/deploying-nodejs)
-<br /><br />
+<br />
 <hr />
 
 It is recommended to have separate databases for each deployment. Verify that your application is running by navigating to the application's URL in the browser.
