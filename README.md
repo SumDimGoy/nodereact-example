@@ -52,13 +52,14 @@ deployment use `0.0.0.0/0`
 * Create config/dev.js:
   ```javascript
   module.exports = {
-    googleClientID: '<Google OAuth Client ID>',
-    googleClientSecret: '<Google OAuth Client Secret>',
-    mongoURI: '<MongoDB Connection String>',
-    cookieKey: '<Hash/Cookie Key>',
-    stripePublishableKey: '<Stripe Publishable API Key>',
+    googleClientID: '<google oauth client id>',
+    googleClientSecret: '<google oauth client secret>',
+    mongoURI: '<mongodb connection string>',
+    cookieKey: '<hash/cookie key>',
+    stripePublishableKey: '<stripe publishable api key>',
     stripeSecretKey: '<Stripe Secret API Key>',
-    sendgridKey: '<Sendgrid API Key>',
+    sendgridKey: '<sendgrid api key>',
+    sendgridEmail: '<sendgrid email address>',
     redirectDomain: '<deployment url or localhost:3000>'
   }
   ```
@@ -76,13 +77,14 @@ deployment use `0.0.0.0/0`
 #### Heroku Deployment #####
 * [Login to Heroku and set environment variables:](https://devcenter.heroku.com/articles/config-vars)
   ```
-  GOOGLE_CLIENT_ID = <Google OAuth Client ID>
-  GOOGLE_CLIENT_SECRET = <Google OAuth Client Secret>
-  MONGO_URI = <MongoDB Connection String>
-  COOKIE_KEY = <Hash/Cookie Key>
-  STRIPE_PUBLISHABLE_KEY = <Stripe Publishable API Key>
-  STRIPE_SECRET_KEY = <Stripe Secret API Key>
-  SENDGRID_KEY = <Sendgrid API Key>
+  GOOGLE_CLIENT_ID = <google oauth client id>
+  GOOGLE_CLIENT_SECRET = <google oauth client secret>
+  MONGO_URI = <mongodb connection string>
+  COOKIE_KEY = <hash/cookie key>
+  STRIPE_PUBLISHABLE_KEY = <stripe publishable api key>
+  STRIPE_SECRET_KEY = <stripe secret api key>
+  SENDGRID_KEY = <sendgrid api key>
+  SENDGRID_EMAIL: <sendgrid email address>
   REDIRECT_DOMAIN = <deployment url or localhost:3000>
   ```
 

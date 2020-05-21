@@ -10,7 +10,7 @@ class Mailer extends helper.Mail {
 
       //the address which is sending the email
       this.sgApi = sendgrid(keys.sendgridKey);
-      this.from_email = new helper.Email('kefreshour@gmail.com');
+      this.from_email = new helper.Email(keys.sendgridEmail);
       this.subject = subject;
       this.body = new helper.Content('text/html', content);
       this.recipients = this.formatAddresses(recipients);
@@ -36,7 +36,7 @@ class Mailer extends helper.Mail {
       trackingSettings.setClickTracking(clickTracking);
       this.addTrackingSettings(trackingSettings);
     }
-    
+
     addRecipients (recipients) {
       const personalize = new helper.Personalization();
       this.recipients.forEach(recipient => {
