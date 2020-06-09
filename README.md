@@ -10,7 +10,7 @@ and MongoDB based on a Udemy course.
 * [Google OAuth 2.0 Keys](https://support.google.com/cloud/answer/6158849?hl=en)
 * [Random hash or string for a cookie key](https://www.openssl.org/docs/man1.0.2/man1/rand.html)
 * [Stripe API Key](https://stripe.com/)
-* [Sendgrid API Key](https://stripe.com/)
+* [Sendgrid API Key](https://sendgrid.com/)
 
 #### What is this repository for? ####
 
